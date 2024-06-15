@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Restaurant Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#reserve">Reserve a Table</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <h3>Pizza</h3>
+            <p>$12.00</p>
+            <button onclick="addToOrder('Pizza', 12.00)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Burger</h3>
+            <p>$8.00</p>
+            <button onclick="addToOrder('Burger', 8.00)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Pasta</h3>
+            <p>$10.00</p>
+            <button onclick="addToOrder('Pasta', 10.00)">Add to Order</button>
+        </div>
+    </section>
+
+    <section id="order">
+        <h2>Place Your Order</h2>
+        <div id="order-list"></div>
+        <h3>Total: $<span id="total">0.00</span></h3>
+        <textarea id="specialInstructions" placeholder="Any special instructions?"></textarea>
+        <button id="placeOrderButton">Place Order</button>
+    </section>
+
+    <section id="reserve">
+        <h2>Reserve a Table</h2>
+        <form id="reservationForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="number" id="guests" placeholder="Number of Guests" required>
+            <button type="submit">Reserve</button>
+        </form>
+    </section>
+
+    <section id="feedback">
+        <h2>Leave Your Feedback</h2>
+        <textarea id="feedbackText" placeholder="Your feedback" required></textarea>
+        <input type="number" id="rating" placeholder="Your rating (1-5)" min="1" max="5" required>
+        <button id="submitFeedback">Submit Feedback</button>
+        <div id="feedbackList"></div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
